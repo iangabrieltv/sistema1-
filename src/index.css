@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Inter", sans-serif;
+  --color-lavender-accent: #e6e6fa;
+  --color-purple-deep: #6a1b9a;
+}
+
+@layer base {
+  html, body {
+    overflow-y: auto !important;
+    height: auto;
+    min-height: 100%;
+  }
+
+  body {
+    background-color: #ffffff;
+    color: #1a1a1a;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-serif);
+  }
+}
+
+@layer utilities {
+  .petal {
+    position: absolute;
+    top: -10%;
+    user-select: none;
+    pointer-events: none;
+    z-index: 5;
+    animation: fall linear forwards;
+  }
+
+  @keyframes fall {
+    0% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 0.4;
+    }
+    90% {
+      opacity: 0.4;
+    }
+    100% {
+      transform: translateY(110vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  .card-shadow {
+    box-shadow: 0 4px 30px rgba(106, 27, 154, 0.03);
+  }
+
+  .progress-bar-glow {
+    box-shadow: 0 0 10px rgba(230, 230, 250, 0.5);
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(106, 27, 154, 0.1);
+    border-radius: 10px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(106, 27, 154, 0.2);
+  }
+}
